@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-do List</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <!-- Emmet Abbreviation -->
+  <header class="header">
+    <h1>To Do List</h1>
+  </header>
+  <nav class="nav">
+    <button class="nav__button">오늘만 보기</button>
+    <button class="nav__button">내일만 보기</button>
+    <button class="nav__button selected">함께 보기</button>
+  </nav>
+  <main class="todos">
+    <section class="todos__today">
+      <h2>오늘 할 일</h2>
+      <ul class="todos__items">
+        <li class="todos__item">
+          <div class="todos__item-wrap">
+            <p>룰루랄라</p>
+            <button class="todos__delete">X 삭제</button>
+          </div>
+        </li>
+      </ul>
+      <div class="todos__add-wrap">
+        <input class="todos__input" type="text" name="today" placeholder="할 일을 입력해 주세요" />
+        <button class="todos__add">+</button>
+      </div>
+    </section>
+    <section class="todos__tomorrow">
+      <h2>내일 할 일</h2>
+      <ul class="todos__items"></ul>
+      <div class="todos__add-wrap">
+        <input class="todos__input" type="text" name="tomorrow" placeholder="할 일을 입력해 주세요" />
+        <button class="todos__add">+</button>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <p>SOPT 29th WEB PART</p>
+  </footer>
+</body>
+</html>
