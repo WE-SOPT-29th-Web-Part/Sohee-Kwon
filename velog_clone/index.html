@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="./source/favicon.png" />
+  <link rel="stylesheet" href="./style.css" />
+  <title>velog</title>
+</head>
+<body>
+  <header class="header">
+    <a class="header__logo" href="/" alt="velog">
+      velog
+    </a>
+    <div class="header--right">
+      <img class="header__search" src="./source/search.svg" alt="search" />
+      <button class="header__login">로그인</button>
+    </div>
+  </header>
+  <div class="content">
+    <nav class="nav">
+      <div class="nav--left">
+        <div class="nav__gnb-wrap">
+          <div class="nav__gnb">
+            <a class="nav__trending nav__item selected" href="/" alt="trending">
+              <img src="./source/trending-up.svg" />
+              트렌딩
+            </a>
+            <a class="nav__recent nav__item" href="/" alt="recent">
+              <img src="./source/clock.svg" />
+              최신
+            </a>
+          </div>
+          <div class="nav__gnb-bar"></div>
+        </div>
+        <button class="nav__select" onclick="document.querySelector('.nav__options').classList.toggle('hidden')">
+          <p>이번 주</p>
+          <img src="./source/chevron-down.svg" />
+        </button>
+        <ul class="nav__options hidden">
+          <li class="option">오늘</li>
+          <li class="option selected">이번 주</li>
+          <li class="option">이번 달</li>
+          <li class="option">올해</li>
+        </ul>
+      </div>
+      <img class="nav__more" src="./source/more-vertical.svg" alt="more" />
+    </nav>
+    <main class="main">
+      <section class="postings">
+        <article class="post">
+          <img class="post__image" src="./source/photo.png" alt="image" />
+          <div class="post__text-wrap">
+            <h4 class="post__title">
+              [WE SOPT] 웹파트 세미나 첫번째 과제~
+            </h4>
+            <p class="post__desc">
+              첫번째 과제부터 velog를 클론코딩 하다니... 매운 맛이지만 재밌네요~ 과연 React 과제는 무엇일지...? 두근두근! 벌써부터 기대되네요😊😉
+            </p>
+            <p class="post__date">2021년 10월 8일 · 23개의 댓글</p>
+          </div>
+          <div class="post__profile-wrap">
+            <div class="post__profile-left">
+              <img class="post__profile--image" src="./source/profile.png" alt="profile"/>
+              <p class="post__profile--id">
+              by <span>soheekwon</span>
+              </p>
+            </div>
+            <p class="post__profile--heart">🖤 23</p>
+          </div>
+        </article>
+        <article class="post">
+          <img class="post__image" src="./source/photo.png" alt="image" />
+          <div class="post__text-wrap">
+            <h4 class="post__title">
+              [WE SOPT] 웹파트 세미나 첫번째 과제~
+            </h4>
+            <p class="post__desc">
+              첫번째 과제부터 velog를 클론코딩 하다니... 매운 맛이지만 재밌네요~ 과연 React 과제는 무엇일지...? 두근두근! 벌써부터 기대되네요😊😉
+            </p>
+            <p class="post__date">2021년 10월 8일 · 23개의 댓글</p>
+          </div>
+          <div class="post__profile-wrap">
+            <div class="post__profile-left">
+              <img class="post__profile--image" src="./source/profile.png" alt="profile"/>
+              <p class="post__profile--id">
+              by <span>soheekwon</span>
+              </p>
+            </div>
+            <p class="post__profile--heart">🖤 23</p>
+          </div>
+        </article>
+        <article class="post">
+          <img class="post__image" src="./source/photo.png" alt="image" />
+          <div class="post__text-wrap">
+            <h4 class="post__title">
+              [WE SOPT] 웹파트 세미나 첫번째 과제~
+            </h4>
+            <p class="post__desc">
+              첫번째 과제부터 velog를 클론코딩 하다니... 매운 맛이지만 재밌네요~ 과연 React 과제는 무엇일지...? 두근두근! 벌써부터 기대되네요😊😉
+            </p>
+            <p class="post__date">2021년 10월 8일 · 23개의 댓글</p>
+          </div>
+          <div class="post__profile-wrap">
+            <div class="post__profile-left">
+              <img class="post__profile--image" src="./source/profile.png" alt="profile"/>
+              <p class="post__profile--id">
+              by <span>soheekwon</span>
+              </p>
+            </div>
+            <p class="post__profile--heart">🖤 23</p>
+          </div>
+        </article>
+        <article class="post">
+          <img class="post__image" src="./source/photo.png" alt="image" />
+          <div class="post__text-wrap">
+            <h4 class="post__title">
+              [WE SOPT] 웹파트 세미나 첫번째 과제~
+            </h4>
+            <p class="post__desc">
+              첫번째 과제부터 velog를 클론코딩 하다니... 매운 맛이지만 재밌네요~ 과연 React 과제는 무엇일지...? 두근두근! 벌써부터 기대되네요😊😉
+            </p>
+            <p class="post__date">2021년 10월 8일 · 23개의 댓글</p>
+          </div>
+          <div class="post__profile-wrap">
+            <div class="post__profile-left">
+              <img class="post__profile--image" src="./source/profile.png" alt="profile"/>
+              <p class="post__profile--id">
+              by <span>soheekwon</span>
+              </p>
+            </div>
+            <p class="post__profile--heart">🖤 23</p>
+          </div>
+        </article>
+        <article class="post">
+          <img class="post__image" src="./source/photo.png" alt="image" />
+          <div class="post__text-wrap">
+            <h4 class="post__title">
+              [WE SOPT] 웹파트 세미나 첫번째 과제~
+            </h4>
+            <p class="post__desc">
+              첫번째 과제부터 velog를 클론코딩 하다니... 매운 맛이지만 재밌네요~ 과연 React 과제는 무엇일지...? 두근두근! 벌써부터 기대되네요😊😉
+            </p>
+            <p class="post__date">2021년 10월 8일 · 23개의 댓글</p>
+          </div>
+          <div class="post__profile-wrap">
+            <div class="post__profile-left">
+              <img class="post__profile--image" src="./source/profile.png" alt="profile"/>
+              <p class="post__profile--id">
+              by <span>soheekwon</span>
+              </p>
+            </div>
+            <p class="post__profile--heart">🖤 23</p>
+          </div>
+        </article>
+        <article class="post">
+          <img class="post__image" src="./source/photo.png" alt="image" />
+          <div class="post__text-wrap">
+            <h4 class="post__title">
+              [WE SOPT] 웹파트 세미나 첫번째 과제~
+            </h4>
+            <p class="post__desc">
+              첫번째 과제부터 velog를 클론코딩 하다니... 매운 맛이지만 재밌네요~ 과연 React 과제는 무엇일지...? 두근두근! 벌써부터 기대되네요😊😉
+            </p>
+            <p class="post__date">2021년 10월 8일 · 23개의 댓글</p>
+          </div>
+          <div class="post__profile-wrap">
+            <div class="post__profile-left">
+              <img class="post__profile--image" src="./source/profile.png" alt="profile"/>
+              <p class="post__profile--id">
+              by <span>soheekwon</span>
+              </p>
+            </div>
+            <p class="post__profile--heart">🖤 23</p>
+          </div>
+        </article>
+        <article class="post">
+          <img class="post__image" src="./source/photo.png" alt="image" />
+          <div class="post__text-wrap">
+            <h4 class="post__title">
+              [WE SOPT] 웹파트 세미나 첫번째 과제~
+            </h4>
+            <p class="post__desc">
+              첫번째 과제부터 velog를 클론코딩 하다니... 매운 맛이지만 재밌네요~ 과연 React 과제는 무엇일지...? 두근두근! 벌써부터 기대되네요😊😉
+            </p>
+            <p class="post__date">2021년 10월 8일 · 23개의 댓글</p>
+          </div>
+          <div class="post__profile-wrap">
+            <div class="post__profile-left">
+              <img class="post__profile--image" src="./source/profile.png" alt="profile"/>
+              <p class="post__profile--id">
+              by <span>soheekwon</span>
+              </p>
+            </div>
+            <p class="post__profile--heart">🖤 23</p>
+          </div>
+        </article>
+        <article class="post">
+          <img class="post__image" src="./source/photo.png" alt="image" />
+          <div class="post__text-wrap">
+            <h4 class="post__title">
+              [WE SOPT] 웹파트 세미나 첫번째 과제~
+            </h4>
+            <p class="post__desc">
+              첫번째 과제부터 velog를 클론코딩 하다니... 매운 맛이지만 재밌네요~ 과연 React 과제는 무엇일지...? 두근두근! 벌써부터 기대되네요😊😉
+            </p>
+            <p class="post__date">2021년 10월 8일 · 23개의 댓글</p>
+          </div>
+          <div class="post__profile-wrap">
+            <div class="post__profile-left">
+              <img class="post__profile--image" src="./source/profile.png" alt="profile"/>
+              <p class="post__profile--id">
+              by <span>soheekwon</span>
+              </p>
+            </div>
+            <p class="post__profile--heart">🖤 23</p>
+          </div>
+        </article>
+        <article class="post">
+          <img class="post__image" src="./source/photo.png" alt="image" />
+          <div class="post__text-wrap">
+            <h4 class="post__title">
+              [WE SOPT] 웹파트 세미나 첫번째 과제~
+            </h4>
+            <p class="post__desc">
+              첫번째 과제부터 velog를 클론코딩 하다니... 매운 맛이지만 재밌네요~ 과연 React 과제는 무엇일지...? 두근두근! 벌써부터 기대되네요😊😉
+            </p>
+            <p class="post__date">2021년 10월 8일 · 23개의 댓글</p>
+          </div>
+          <div class="post__profile-wrap">
+            <div class="post__profile-left">
+              <img class="post__profile--image" src="./source/profile.png" alt="profile"/>
+              <p class="post__profile--id">
+              by <span>soheekwon</span>
+              </p>
+            </div>
+            <p class="post__profile--heart">🖤 23</p>
+          </div>
+        </article>
+        <article class="post">
+          <img class="post__image" src="./source/photo.png" alt="image" />
+          <div class="post__text-wrap">
+            <h4 class="post__title">
+              [WE SOPT] 웹파트 세미나 첫번째 과제~
+            </h4>
+            <p class="post__desc">
+              첫번째 과제부터 velog를 클론코딩 하다니... 매운 맛이지만 재밌네요~ 과연 React 과제는 무엇일지...? 두근두근! 벌써부터 기대되네요😊😉
+            </p>
+            <p class="post__date">2021년 10월 8일 · 23개의 댓글</p>
+          </div>
+          <div class="post__profile-wrap">
+            <div class="post__profile-left">
+              <img class="post__profile--image" src="./source/profile.png" alt="profile"/>
+              <p class="post__profile--id">
+              by <span>soheekwon</span>
+              </p>
+            </div>
+            <p class="post__profile--heart">🖤 23</p>
+          </div>
+        </article>
+        <article class="post">
+          <img class="post__image" src="./source/photo.png" alt="image" />
+          <div class="post__text-wrap">
+            <h4 class="post__title">
+              [WE SOPT] 웹파트 세미나 첫번째 과제~
+            </h4>
+            <p class="post__desc">
+              첫번째 과제부터 velog를 클론코딩 하다니... 매운 맛이지만 재밌네요~ 과연 React 과제는 무엇일지...? 두근두근! 벌써부터 기대되네요😊😉
+            </p>
+            <p class="post__date">2021년 10월 8일 · 23개의 댓글</p>
+          </div>
+          <div class="post__profile-wrap">
+            <div class="post__profile-left">
+              <img class="post__profile--image" src="./source/profile.png" alt="profile"/>
+              <p class="post__profile--id">
+              by <span>soheekwon</span>
+              </p>
+            </div>
+            <p class="post__profile--heart">🖤 23</p>
+          </div>
+        </article>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
