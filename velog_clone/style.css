@@ -169,6 +169,10 @@ p {
 .option.selected {
   color: #12b886;
 }
+.option:hover {
+  background-color: rgba(0, 0, 0, 0.03);
+  cursor: pointer;
+}
 .hidden {
   opacity: 0;
   transform-origin: 100%;
