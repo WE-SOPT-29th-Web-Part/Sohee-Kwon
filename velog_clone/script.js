@@ -3,6 +3,31 @@ const optionList = document.querySelector(".nav__options");
 const selectedOption = document.querySelector(".nav__select > p");
 const posts = document.querySelectorAll(".post");
 const modal = document.querySelector(".modal");
+const tagForm = document.querySelector(".tag__form");
+const tagList = document.querySelector(".tag__list");
+const tagInput = document.querySelector(".tag__input");
+
+let tags = [];
+
+const deleteTag = (event) => {
+  tags = tags.filter((el) => el !== event.target.innerText);
+  event.target.remove();
+};
+
+const addTag = (event) => {
+  event.preventDefault();
+  const newTag = tagInput.value;
+
+  if (tags.find((el) => el === newTag) === undefined) {
+    const tag = document.createElement("li");
+    tag.classList.add("tag");
+    tag.addEventListener("click", deleteTag);
+    tags.push(newTag);
+    tag.innerText = newTag;
+    tagInput.before(tag);
+  }
+  tagInput.value = "";
+};
 
 const showPost = (index) => {
   if (window.innerWidth > 767) {
@@ -33,6 +58,7 @@ const switchOption = (event) => {
 
 const init = () => {
   options.forEach((option) => option.addEventListener("click", switchOption));
+  tagForm && tagForm.addEventListener("submit", addTag);
 };
 
 init();
