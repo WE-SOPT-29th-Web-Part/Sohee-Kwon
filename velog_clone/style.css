@@ -213,6 +213,12 @@ p {
   transition-property: transform, box-shadow;
   box-shadow: lightgray 0 10px 20px -3px;
 }
+.modal > .post:hover {
+  cursor: default;
+  transform: translateY(0px);
+  transition: none;
+  box-shadow: lightgray 0 0 10px -3px;
+}
 .post__image {
   width: inherit;
   height: 167px;
@@ -275,6 +281,31 @@ p {
 .post__profile--id span {
   color: black;
   font-weight: bold;
+}
+.modal {
+  position: fixed;
+  top: 0;
+  z-index: 99;
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+.modal__button {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  border: none;
+  background-color: rgb(73, 80, 87);
+  color: white;
+  font-size: 18px;
+  margin-top: 10px;
+  margin-left: calc(50% - 20px);
+}
+.modal__button:hover {
+  background-color: rgb(52, 58, 64);
+  transition: all 0.5s;
+  cursor: pointer;
 }
 
 @media (max-width: 1919px) and (min-width: 1441px) {
