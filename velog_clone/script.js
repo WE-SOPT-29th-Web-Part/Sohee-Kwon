@@ -6,8 +6,12 @@ const modal = document.querySelector(".modal");
 const tagForm = document.querySelector(".tag__form");
 const tagList = document.querySelector(".tag__list");
 const tagInput = document.querySelector(".tag__input");
+const navTrending = document.querySelector(".nav__trending");
+const navRecent = document.querySelector(".nav__recent");
+const navBar = document.querySelector(".nav__gnb-bar");
 
 let tags = [];
+let currentMenu = "trending";
 
 const deleteTag = (event) => {
   tags = tags.filter((el) => el !== event.target.innerText);
@@ -50,6 +54,33 @@ const showPost = (index) => {
     cancelButton.classList.add("modal__button");
     cancelButton.addEventListener("click", cancelPost);
     modal.appendChild(cancelButton);
+  }
+};
+
+const switchMenu = (mode) => {
+  switch (mode) {
+    case "trending":
+      currentMenu = "trending";
+      navTrending.classList.add("selected");
+      navTrending.querySelector("img").src = "./source/trending-up-black.svg";
+      navRecent.classList.remove("selected");
+      navRecent.querySelector("img").src = "./source/clock-gray.svg";
+      navBar.style.marginLeft = 0;
+      break;
+    case "recent":
+      currentMenu = "recent";
+      navTrending.classList.remove("selected");
+      navTrending.querySelector("img").src = "./source/trending-up-gray.svg";
+      navRecent.classList.add("selected");
+      navRecent.querySelector("img").src = "./source/clock-black.svg";
+      if (window.innerWidth <= 1056) {
+        navBar.style.marginLeft = "80px";
+      } else {
+        navBar.style.marginLeft = "112px";
+      }
+      break;
+    default:
+      break;
   }
 };
 

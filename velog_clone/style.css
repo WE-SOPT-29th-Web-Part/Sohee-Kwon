@@ -123,6 +123,9 @@ p {
 .nav__item:focus {
   color: #a0a0a0;
 }
+.nav__item:hover {
+  cursor: pointer;
+}
 .selected,
 .selected:hover,
 .selected:visited,
@@ -143,6 +146,7 @@ p {
   width: 112px;
   background-color: black;
   margin-top: -2px;
+  transition: all 0.5s;
 }
 .nav__select {
   width: 96px;
@@ -387,6 +391,9 @@ p {
   .main {
     width: calc(100% - 2rem);
   }
+  .nav__gnb-wrap {
+    width: 161px;
+  }
   .postings {
     width: calc(100% + 4rem);
   }
@@ -426,6 +433,9 @@ p {
   .content,
   .main {
     width: calc(100% - 2rem);
+  }
+  .nav__gnb-wrap {
+    width: 161px;
   }
   .postings {
     width: calc(100% + 4rem);
