@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>To-do List</title>
   <link rel="stylesheet" href="./style.css" />
+  <script defer src="./script.js"></script>
 </head>
 <body>
   <!-- Emmet Abbreviation -->
@@ -29,16 +30,20 @@
         </li>
       </ul>
       <div class="todos__add-wrap">
-        <input class="todos__input" type="text" name="today" placeholder="할 일을 입력해 주세요" />
-        <button class="todos__add">+</button>
+        <form class="todos__form">
+          <input class="todos__input" type="text" name="today" placeholder="할 일을 입력해 주세요" />
+          <button type="submit" class="todos__add">+</button>
+        </form>
       </div>
     </section>
     <section class="todos__tomorrow">
       <h2>내일 할 일</h2>
       <ul class="todos__items"></ul>
       <div class="todos__add-wrap">
-        <input class="todos__input" type="text" name="tomorrow" placeholder="할 일을 입력해 주세요" />
-        <button class="todos__add">+</button>
+        <form class="todos__form">
+          <input class="todos__input" type="text" name="tomorrow" placeholder="할 일을 입력해 주세요" />
+          <button type="submit" class="todos__add">+</button>
+        </form>
       </div>
     </section>
   </main>
