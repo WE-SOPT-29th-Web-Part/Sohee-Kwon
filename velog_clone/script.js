@@ -29,22 +29,26 @@ const addTag = (event) => {
   tagInput.value = "";
 };
 
+const cancelPost = () => {
+  modal.style.display = "none";
+  modal.innerHTML = "";
+  document.body.style.overflow = "auto";
+};
+
 const showPost = (index) => {
   if (window.innerWidth > 767) {
     modal.style.display = "block";
-    modal.appendChild(posts[index - 1]);
+    modal.appendChild(posts[index - 1].cloneNode(true));
     const modalPost = modal.querySelector(".post");
     modalPost.style.margin = "auto";
     modalPost.style.marginTop = "10%";
     modalPost.onclick = null;
+    document.body.style.overflow = "hidden";
 
     const cancelButton = document.createElement("button");
     cancelButton.innerText = "X";
     cancelButton.classList.add("modal__button");
-    cancelButton.addEventListener("click", () => {
-      modal.style.display = "none";
-      modal.innerHTML = "";
-    });
+    cancelButton.addEventListener("click", cancelPost);
     modal.appendChild(cancelButton);
   }
 };
