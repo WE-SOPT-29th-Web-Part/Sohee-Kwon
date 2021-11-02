@@ -42,6 +42,7 @@ const Result = ({ date, type }) => {
         <input
           type="number"
           value={day}
+          min="0"
           onChange={(e) => setDay(parseInt(e.target.value))}
         />
         {type === "d+day" ? "일째 되는 날은?" : "는?"}
