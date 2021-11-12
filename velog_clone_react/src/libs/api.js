@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const client = axios.create({
-  baseURL: "https://localhost:4000/",
+  baseURL: "http://localhost:4000/",
   headers: {
     "Content-Type": "application/json",
   },
@@ -21,10 +21,14 @@ export const getArticles = async () => {
 export const createArticle = async (articleData) => {
   try {
     const { data } = await client.get("article");
+    const date = new Date();
     await client.post("article", {
       ...articleData,
-      id: data.length,
-      date: new Date(),
+      id: data.length + 1,
+      date: `${date.getFullYear()}년 ${
+        date.getMonth() + 1
+      }월 ${date.getDate()}일`,
+      thumbnail: "",
     });
     console.log("[SUCCESS] createArticle");
   } catch (e) {
