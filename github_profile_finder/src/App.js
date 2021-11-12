@@ -11,9 +11,7 @@ function App() {
     <div className="App">
       <Header />
       <SearchBar userData={userData} setUserData={setUserData} />
-      {userData.data && (
-        <Result userData={userData} setUserData={setUserData} />
-      )}
+      <Result userData={userData} setUserData={setUserData} />
     </div>
   );
 }

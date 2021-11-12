@@ -8,13 +8,13 @@ const SearchBar = ({ userData, setUserData }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setUserData({ ...userData, status: "pending" });
 
     try {
-      setUserData({ ...userData, status: "pending" });
       const data = await getUserData(input);
-      setUserData({ data: data, status: "resolved" });
+      setUserData({ ...userData, status: "resolved", data });
     } catch (e) {
-      setUserData({ ...userData, status: "rejected" });
+      setUserData({ ...userData, status: "rejected", data: null });
     }
     setInput("");
   };
