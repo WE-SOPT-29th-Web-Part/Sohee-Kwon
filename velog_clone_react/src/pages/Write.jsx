@@ -35,24 +35,24 @@ const Write = () => {
     tempData[key] = [...tempData[key], value];
     setArticleData(tempData);
   };
-  const handleArrDataRemove = (key, innerText) => {
+  const handleArrDataRemove = (key, value) => {
     const tempData = { ...articleData };
-    tempData[key] = tempData[key].filter((item) => item !== innerText);
+    tempData[key] = tempData[key].filter((item) => item !== value);
     setArticleData(tempData);
   };
 
   return (
     <StyledRoot>
       <StyledTop>
-        <ArticleTitle handleDataChange={handleDataChange} />
+        <ArticleTitle onDataChange={handleDataChange} />
         <StyledMiddleLine />
         <ArticleTag
           tags={articleData.tags}
-          handleArrDataChange={handleArrDataChange}
-          handleArrDataRemove={handleArrDataRemove}
+          onArrDataChange={handleArrDataChange}
+          onArrDataRemove={handleArrDataRemove}
         />
       </StyledTop>
-      <ArticleBody handleDataChange={handleDataChange} />
+      <ArticleBody onDataChange={handleDataChange} />
       <ArticleFooter createArticle={createArticleFunc} />
     </StyledRoot>
   );

@@ -6,7 +6,6 @@ import { colors } from "../../libs/constants/colors";
 import { ReactComponent as GithubIcon } from "../../assets/icons/github.svg";
 import { ReactComponent as HomeIcon } from "../../assets/icons/home.svg";
 import { ReactComponent as MailIcon } from "../../assets/icons/mail.svg";
-import Home from "../../pages/Home";
 
 const Profile = () => {
   return (

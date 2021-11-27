@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { colors } from "../../libs/constants/colors";
 
-const ArticleTag = ({ tags, handleArrDataChange, handleArrDataRemove }) => {
+const ArticleTag = ({ tags, onArrDataChange, onArrDataRemove }) => {
   const handleSubmit = (e) => {
     if (e.key === "," || e.key === "Enter") {
       if (
@@ -13,7 +13,7 @@ const ArticleTag = ({ tags, handleArrDataChange, handleArrDataRemove }) => {
         e.target.value = "";
         return;
       }
-      handleArrDataChange("tags", e.target.value);
+      onArrDataChange("tags", e.target.value);
       e.target.value = "";
     }
   };
@@ -24,7 +24,7 @@ const ArticleTag = ({ tags, handleArrDataChange, handleArrDataRemove }) => {
         tags.map((tag) => (
           <span
             key={tag}
-            onClick={(e) => handleArrDataRemove("tags", e.target.innerText)}
+            onClick={(e) => onArrDataRemove("tags", e.target.innerText)}
           >
             {tag}
           </span>

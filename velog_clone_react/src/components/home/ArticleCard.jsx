@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { colors } from "../../libs/constants/colors";
 
 const ArticleCard = ({ article }) => {
-  const { title, summary, tags, thumbnail, date, ...rest } = article;
+  const { title, summary, tags, thumbnail, date } = article;
 
   return (
     <StyledRoot>

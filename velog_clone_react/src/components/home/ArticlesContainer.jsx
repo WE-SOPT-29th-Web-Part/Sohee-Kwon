@@ -16,7 +16,7 @@ const ArticlesContainer = () => {
 
   return (
     <StyledRoot>
-      {articles &&
+      {articles !== [] &&
         [...articles]
           .reverse()
           .map((article) => <ArticleCard key={article.id} article={article} />)}

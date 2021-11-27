@@ -8,7 +8,6 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/series" element={<Home />} />
           <Route path="/write" element={<Write />} />
           <Route path="/*" element={<h1>Page Not Found</h1>} />
         </Routes>
