@@ -31,9 +31,7 @@ const Write = () => {
     setArticleData(tempData);
   };
   const handleArrDataChange = (key, value) => {
-    const tempData = { ...articleData };
-    tempData[key] = [...tempData[key], value];
-    setArticleData(tempData);
+    handleDataChange(key, [...articleData[key], value]);
   };
   const handleArrDataRemove = (key, value) => {
     const tempData = { ...articleData };
