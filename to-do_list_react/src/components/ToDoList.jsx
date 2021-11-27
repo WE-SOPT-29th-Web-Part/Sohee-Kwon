@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import ToDoItem from "./ToDoItem";
 import AddItem from "./AddItem";
 
-const ToDoList = ({ type, list, setList }) => {
+const ToDoList = ({ type }) => {
+  const [list, setList] = useState([]);
+
   return (
     <section className="todos__section">
       <h2>{type === "today" ? "오늘 할 일" : "내일 할 일"}</h2>
