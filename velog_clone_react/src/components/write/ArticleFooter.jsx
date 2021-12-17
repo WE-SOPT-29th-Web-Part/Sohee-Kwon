@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { ReactComponent as ArrowLeftIcon } from "../../assets/icons/arrow_left.svg";
 import { colors } from "../../libs/constants/colors";
 
-const ArticleFooter = ({ createArticle }) => {
+const ArticleFooter = ({ setIsPublishScreen }) => {
   const navigate = useNavigate();
 
   return (
@@ -15,7 +15,9 @@ const ArticleFooter = ({ createArticle }) => {
       </StyledLeft>
       <StyledRight>
         <StyledButton>임시저장</StyledButton>
-        <StyledButton onClick={() => createArticle()}>출간하기</StyledButton>
+        <StyledButton onClick={() => setIsPublishScreen(true)}>
+          출간하기
+        </StyledButton>
       </StyledRight>
     </StyledRoot>
   );

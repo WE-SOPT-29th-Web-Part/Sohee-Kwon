@@ -23,3 +23,8 @@ button {
   padding: 0;
   cursor: pointer;
 }
+
+a {
+  color: black;
+  text-decoration: none;
+}

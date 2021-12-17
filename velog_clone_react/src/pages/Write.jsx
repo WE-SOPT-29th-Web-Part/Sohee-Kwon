@@ -1,29 +1,40 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import ArticleBody from "../components/write/ArticleBody";
 import ArticleTitle from "../components/write/ArticleTitle";
 import ArticleTag from "../components/write/ArticleTag";
 import ArticleFooter from "../components/write/ArticleFooter";
-import { createArticle } from "../libs/api";
+import { createArticle, updateArticle } from "../libs/api";
 import { colors } from "../libs/constants/colors";
+import PublishScreen from "../components/write/publishScreen/index";
 
 const Write = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const article = location.state();
 
-  const [articleData, setArticleData] = useState({
-    id: "",
-    title: "",
-    body: "",
-    summary: "",
-    tags: [],
-    thumbnail: "",
-    date: "",
-  });
+  const [articleData, setArticleData] = useState(
+    article ?? {
+      id: "",
+      title: "",
+      body: "",
+      summary: "",
+      tags: [],
+      thumbnail: "",
+      date: "",
+    }
+  );
+
+  const [isPublishScreen, setIsPublishScreen] = useState(false);
 
   const createArticleFunc = async () => {
     await createArticle(articleData);
     navigate("/");
+  };
+  const updateArticleFunc = async () => {
+    await updateArticle(articleData);
+    navigate(`/article/${articleData.id}`, { state: articleData });
   };
   const handleDataChange = (key, value) => {
     const tempData = { ...articleData };
@@ -42,16 +53,26 @@ const Write = () => {
   return (
     <StyledRoot>
       <StyledTop>
-        <ArticleTitle onDataChange={handleDataChange} />
+        <ArticleTitle
+          title={articleData.title}
+          onDataChange={handleDataChange}
+        />
         <StyledMiddleLine />
         <ArticleTag
           tags={articleData.tags}
           onArrDataChange={handleArrDataChange}
-          onArrDataRemove={handleArrDataRemove}
+          onArrDataDelete={handleArrDataRemove}
         />
       </StyledTop>
-      <ArticleBody onDataChange={handleDataChange} />
-      <ArticleFooter createArticle={createArticleFunc} />
+      <ArticleBody body={articleData.body} onDataChange={handleDataChange} />
+      <ArticleFooter setIsPublishScreen={setIsPublishScreen} />
+      <PublishScreen
+        handleArticleSave={article ? updateArticleFunc : createArticleFunc}
+        isPublishScreen={isPublishScreen}
+        setIsPublishScreen={setIsPublishScreen}
+        articleData={articleData}
+        handleDataChange={handleDataChange}
+      />
     </StyledRoot>
   );
 };

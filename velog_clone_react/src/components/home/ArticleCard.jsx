@@ -1,16 +1,20 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { colors } from "../../libs/constants/colors";
+import ImgWrapper from "../common/ImgWrapper";
 
 const ArticleCard = ({ article }) => {
-  const { title, summary, tags, thumbnail, date } = article;
+  const { id, title, summary, tags, thumbnail, date } = article;
 
   return (
     <StyledRoot>
-      <StyledImgWrapper thumbnail={thumbnail}>
-        {thumbnail && <img src={thumbnail} alt="thumbnail" />}
-      </StyledImgWrapper>
-      <h3>{title}</h3>
+      <Link to={`article/${id}`} state={article}>
+        <ImgWrapper ratio="50%">
+          {thumbnail && <img src={thumbnail} alt="thumbnail" />}
+        </ImgWrapper>
+        <h3>{title}</h3>
+      </Link>
       <p>{summary}</p>
       <StyledTag>
         {tags && tags.map((tag) => <span key={tag}>{tag}</span>)}
@@ -35,20 +39,6 @@ const StyledRoot = styled.article`
   & > span {
     color: ${colors.dateGray};
     font-size: 14px;
-  }
-`;
-
-const StyledImgWrapper = styled.div`
-  padding-top: ${({ thumbnail }) => (thumbnail ? "52.356%" : "0")};
-  position: relative;
-  margin-bottom: 16px;
-  & > img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
   }
 `;
 
