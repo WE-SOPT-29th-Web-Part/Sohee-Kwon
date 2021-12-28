@@ -1,4 +1,4 @@
-// import Card from "./Card";
+import Card from "./Card";
 import Loading from "./Loading";
 import { UserData, Status } from "../../lib/interface";
 
@@ -14,7 +14,7 @@ function Result(props: ResultProps) {
     case Status.PENDING:
       return <Loading />;
     case Status.RESOLVED:
-      return <h2>card</h2>;
+      return <Card userData={userData} setUserData={setUserData} />;
     case Status.REJECTED:
       return <h2>User Not Found</h2>;
     case Status.IDLE:
