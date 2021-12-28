@@ -4,11 +4,9 @@ import { UserDataResponse } from "./interface";
 const config: AxiosRequestConfig = { baseURL: "https://api.github.com/users/" };
 export const client: AxiosInstance = axios.create(config);
 
-interface getUserDataFunc {
-  (userId: string): Promise<UserDataResponse | null>;
-}
-
-export const getUserData: getUserDataFunc = async (userId) => {
+export const getUserData = async (
+  userId: string
+): Promise<UserDataResponse | null> => {
   try {
     const { data }: AxiosResponse<UserDataResponse> = await client.get(
       `${userId}`

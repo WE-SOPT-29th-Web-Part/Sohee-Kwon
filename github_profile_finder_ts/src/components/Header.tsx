@@ -1,13 +1,13 @@
 import Styled from "styled-components";
 import { colors } from "../lib/colors";
 
-const Header = () => {
+function Header() {
   return (
     <HeaderWrap>
       <h1>GitHub Profile Finder</h1>
     </HeaderWrap>
   );
-};
+}
 
 const HeaderWrap = Styled.div`
   h1 {
