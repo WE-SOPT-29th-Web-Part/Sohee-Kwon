@@ -1,5 +1,5 @@
 import Styled from "styled-components";
-import { colors } from "../../lib/colors";
+import { colors } from "../../lib/constants/colors";
 
 const Loading = () => {
   return <LoadingSpin />;

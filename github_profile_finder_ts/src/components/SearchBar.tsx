@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import Styled from "styled-components";
-import { colors } from "../lib/colors";
+import { colors } from "../lib/constants/colors";
 import { getUserData } from "../lib/api";
-import { UserDataResponse, UserData, Status } from "../lib/interface";
+import { UserDataResponse, UserData, Status } from "../types/interface";
 
 interface SearchBarProps {
   userData: UserData;

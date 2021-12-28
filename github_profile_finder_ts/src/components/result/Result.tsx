@@ -1,6 +1,6 @@
 import Card from "./Card";
 import Loading from "./Loading";
-import { UserData, Status } from "../../lib/interface";
+import { UserData, Status } from "../../types/interface";
 
 interface ResultProps {
   userData: UserData;

@@ -1,7 +1,7 @@
 import React from "react";
 import Styled from "styled-components";
-import { colors } from "../../lib/colors";
-import { UserData, Status } from "../../lib/interface";
+import { colors } from "../../lib/constants/colors";
+import { UserData, Status } from "../../types/interface";
 
 interface CardProps {
   userData: UserData;
