@@ -1,9 +1,9 @@
 import Styled from "styled-components";
 import { colors } from "../../lib/constants/colors";
 
-const Loading = () => {
+function Loading() {
   return <LoadingSpin />;
-};
+}
 
 const LoadingSpin = Styled.div`
   margin: 200px;

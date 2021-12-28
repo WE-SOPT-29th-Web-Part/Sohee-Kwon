@@ -8,7 +8,7 @@ interface CardProps {
   setUserData: React.Dispatch<React.SetStateAction<UserData>>;
 }
 
-const Card = (props: CardProps) => {
+function Card(props: CardProps) {
   const { userData, setUserData } = props;
 
   if (userData.data === null) return <></>;
@@ -62,7 +62,7 @@ const Card = (props: CardProps) => {
       </div>
     </CardWrap>
   );
-};
+}
 
 const CardWrap = Styled.div`
   .card {
