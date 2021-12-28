@@ -1,5 +1,5 @@
 // import Card from "./Card";
-// import Loading from "./Loading";
+import Loading from "./Loading";
 import { UserData, Status } from "../../lib/interface";
 
 interface ResultProps {
@@ -12,7 +12,7 @@ function Result(props: ResultProps) {
 
   switch (userData.status) {
     case Status.PENDING:
-      return <h2>loading</h2>;
+      return <Loading />;
     case Status.RESOLVED:
       return <h2>card</h2>;
     case Status.REJECTED:
