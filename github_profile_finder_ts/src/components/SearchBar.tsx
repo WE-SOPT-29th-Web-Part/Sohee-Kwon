@@ -23,7 +23,11 @@ function SearchBar(props: SearchBarProps) {
 
     try {
       const data: ResponseData = await getUserData(input);
-      setUserData({ ...userData, status: Status.RESOLVED, data: data });
+      if (data === null) {
+        setUserData({ ...userData, status: Status.REJECTED, data: data });
+      } else {
+        setUserData({ ...userData, status: Status.RESOLVED, data: data });
+      }
     } catch (e) {
       setUserData({ ...userData, status: Status.REJECTED, data: null });
     }
