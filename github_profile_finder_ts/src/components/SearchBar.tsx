@@ -2,16 +2,21 @@ import React, { useState } from "react";
 import Styled from "styled-components";
 import { colors } from "../lib/constants/colors";
 import { getUserData } from "../lib/api";
-import { UserDataResponse, UserData, Status } from "../types/interface";
+import {
+  UserData,
+  UserDataResponse,
+  ChangeUserData,
+  Status,
+} from "../types/interface";
 
 interface SearchBarProps {
   userData: UserData;
-  setUserData: React.Dispatch<React.SetStateAction<UserData>>;
+  changeUserData: ChangeUserData;
 }
 type ResponseData = UserDataResponse | null;
 
 function SearchBar(props: SearchBarProps) {
-  const { userData, setUserData } = props;
+  const { userData, changeUserData } = props;
 
   const [input, setInput] = useState<string>("");
 
@@ -19,17 +24,17 @@ function SearchBar(props: SearchBarProps) {
     e: React.FormEvent<HTMLFormElement>
   ): Promise<void> => {
     e.preventDefault();
-    setUserData({ ...userData, status: Status.PENDING });
+    changeUserData(userData.data, Status.PENDING);
 
     try {
       const data: ResponseData = await getUserData(input);
       if (data === null) {
-        setUserData({ ...userData, status: Status.REJECTED, data: data });
+        changeUserData(null, Status.REJECTED);
       } else {
-        setUserData({ ...userData, status: Status.RESOLVED, data: data });
+        changeUserData(data, Status.RESOLVED);
       }
     } catch (e) {
-      setUserData({ ...userData, status: Status.REJECTED, data: null });
+      changeUserData(null, Status.REJECTED);
     }
     setInput("");
   };

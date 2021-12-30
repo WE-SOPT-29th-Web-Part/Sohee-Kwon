@@ -1,20 +1,20 @@
 import Card from "./Card";
 import Loading from "./Loading";
-import { UserData, Status } from "../../types/interface";
+import { UserData, ChangeUserData, Status } from "../../types/interface";
 
 interface ResultProps {
   userData: UserData;
-  setUserData: React.Dispatch<React.SetStateAction<UserData>>;
+  changeUserData: ChangeUserData;
 }
 
 function Result(props: ResultProps) {
-  const { userData, setUserData } = props;
+  const { userData, changeUserData } = props;
 
   switch (userData.status) {
     case Status.PENDING:
       return <Loading />;
     case Status.RESOLVED:
-      return <Card userData={userData} setUserData={setUserData} />;
+      return <Card userData={userData} changeUserData={changeUserData} />;
     case Status.REJECTED:
       return <h2>User Not Found</h2>;
     case Status.IDLE:

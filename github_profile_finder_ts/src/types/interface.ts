@@ -18,3 +18,7 @@ export interface UserData {
   data: UserDataResponse | null;
   status: Status;
 }
+export type ChangeUserData = (
+  data: UserDataResponse | null,
+  status: Status
+) => void;

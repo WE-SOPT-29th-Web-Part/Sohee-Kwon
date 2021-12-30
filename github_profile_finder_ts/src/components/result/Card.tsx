@@ -1,15 +1,15 @@
 import React from "react";
 import Styled from "styled-components";
 import { colors } from "../../lib/constants/colors";
-import { UserData, Status } from "../../types/interface";
+import { UserData, ChangeUserData, Status } from "../../types/interface";
 
 interface CardProps {
   userData: UserData;
-  setUserData: React.Dispatch<React.SetStateAction<UserData>>;
+  changeUserData: ChangeUserData;
 }
 
 function Card(props: CardProps) {
-  const { userData, setUserData } = props;
+  const { userData, changeUserData } = props;
 
   if (userData.data === null) return <></>;
   const {
@@ -24,7 +24,7 @@ function Card(props: CardProps) {
   } = userData.data;
 
   const handleClose = (e: React.MouseEvent<HTMLButtonElement>): void => {
-    setUserData({ data: null, status: Status.IDLE });
+    changeUserData(null, Status.IDLE);
   };
 
   return (
