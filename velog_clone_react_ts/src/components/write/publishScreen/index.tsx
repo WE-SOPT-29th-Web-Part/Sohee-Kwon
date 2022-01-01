@@ -16,7 +16,7 @@ interface StyledProps {
   isPublishScreen: boolean;
 }
 
-const PublishScreen = (props: PublishScreenProps) => {
+function PublishScreen(props: PublishScreenProps) {
   const {
     handleArticleSave,
     isPublishScreen,
@@ -60,7 +60,7 @@ const PublishScreen = (props: PublishScreenProps) => {
       </StyledWrapper>
     </StyledRoot>
   );
-};
+}
 
 const StyledRoot = styled.div<StyledProps>`
   position: fixed;

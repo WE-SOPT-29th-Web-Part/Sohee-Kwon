@@ -8,7 +8,7 @@ interface ArticleFooterProps {
   updateIsPublishScreen: (value: boolean) => void;
 }
 
-const ArticleFooter = (props: ArticleFooterProps) => {
+function ArticleFooter(props: ArticleFooterProps) {
   const { updateIsPublishScreen } = props;
   const navigate = useNavigate();
 
@@ -26,7 +26,7 @@ const ArticleFooter = (props: ArticleFooterProps) => {
       </StyledRight>
     </StyledRoot>
   );
-};
+}
 
 const StyledRoot = styled.div`
   display: flex;

@@ -8,7 +8,7 @@ interface RightScreenProps {
   updateIsPublishScreen: (value: boolean) => void;
 }
 
-const RightScreen = (props: RightScreenProps) => {
+function RightScreen(props: RightScreenProps) {
   const { handleArticleSave, updateIsPublishScreen } = props;
 
   return (
@@ -21,7 +21,7 @@ const RightScreen = (props: RightScreenProps) => {
       </StyledButton>
     </StyledRoot>
   );
-};
+}
 
 const StyledRoot = styled.section`
   width: 100%;

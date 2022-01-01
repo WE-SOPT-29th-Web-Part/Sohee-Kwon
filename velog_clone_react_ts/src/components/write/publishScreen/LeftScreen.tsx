@@ -16,7 +16,7 @@ const isFileList = (files: any): files is FileList => {
   return (files as FileList).length > 0;
 };
 
-const LeftScreen = (props: LeftScreenProps) => {
+function LeftScreen(props: LeftScreenProps) {
   const { handleDataChange, articleData } = props;
 
   const MAX_NUM = 150;
@@ -72,7 +72,7 @@ const LeftScreen = (props: LeftScreenProps) => {
       </StyledCharacterCounter>
     </StyledRoot>
   );
-};
+}
 
 const StyledRoot = styled.div`
   width: 100%;

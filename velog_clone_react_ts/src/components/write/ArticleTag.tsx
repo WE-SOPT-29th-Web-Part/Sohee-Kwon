@@ -9,7 +9,7 @@ interface ArticleTagProps {
   handleArrDataDelete: (key: Extract<Keys, "tags">, value: string) => void;
 }
 
-const ArticleTag = (props: ArticleTagProps) => {
+function ArticleTag(props: ArticleTagProps) {
   const { tags, handleArrDataChange, handleArrDataDelete } = props;
 
   const handleSubmit = (e: React.KeyboardEvent<HTMLInputElement>) => {
@@ -42,7 +42,7 @@ const ArticleTag = (props: ArticleTagProps) => {
       />
     </StyledRoot>
   );
-};
+}
 
 const StyledRoot = styled.div`
   display: flex;
