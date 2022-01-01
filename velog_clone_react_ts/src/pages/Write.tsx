@@ -8,11 +8,7 @@ import ArticleFooter from "../components/write/ArticleFooter";
 import { createArticle, updateArticle } from "../libs/api";
 import { colors } from "../libs/constants/colors";
 import PublishScreen from "../components/write/publishScreen/index";
-import { Article, Keys } from "../types/interface";
-
-const isArticle = (data: unknown): data is Article => {
-  return (data as Article).title !== undefined;
-};
+import { Article, Keys, isArticle } from "../types/interface";
 
 function Write() {
   const navigate = useNavigate();

@@ -14,3 +14,7 @@ export interface ImageFile {
   key: string;
   url: string;
 }
+
+export const isArticle = (data: unknown): data is Article => {
+  return (data as Article).title !== undefined;
+};
