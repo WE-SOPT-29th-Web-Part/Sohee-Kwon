@@ -7,7 +7,7 @@ import ArticleTag from "../components/write/ArticleTag";
 import ArticleFooter from "../components/write/ArticleFooter";
 import { createArticle, updateArticle } from "../libs/api";
 import { colors } from "../libs/constants/colors";
-// import PublishScreen from "../components/write/publishScreen/index";
+import PublishScreen from "../components/write/publishScreen/index";
 import { Article, Keys } from "../types/interface";
 
 const isArticle = (data: unknown): data is Article => {
@@ -28,7 +28,7 @@ function Write() {
       body: "",
       summary: "",
       tags: [],
-      thumbnail: "",
+      thumbnail: undefined,
       date: "",
     }
   );
@@ -87,13 +87,13 @@ function Write() {
         handleDataChange={handleDataChange}
       />
       <ArticleFooter updateIsPublishScreen={updateIsPublishScreen} />
-      {/* <PublishScreen
+      <PublishScreen
         handleArticleSave={article ? updateArticleFunc : createArticleFunc}
         isPublishScreen={isPublishScreen}
-        setIsPublishScreen={setIsPublishScreen}
+        updateIsPublishScreen={updateIsPublishScreen}
         articleData={articleData}
         handleDataChange={handleDataChange}
-      /> */}
+      />
     </StyledRoot>
   );
 }
