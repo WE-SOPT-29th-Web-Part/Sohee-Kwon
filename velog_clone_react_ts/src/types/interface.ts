@@ -16,5 +16,5 @@ export interface ImageFile {
 }
 
 export const isArticle = (data: unknown): data is Article => {
-  return (data as Article).title !== undefined;
+  return (data as Article)?.title !== undefined;
 };

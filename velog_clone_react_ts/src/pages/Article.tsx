@@ -17,7 +17,7 @@ function Article() {
   const article: ArticleType | null = isArticle(location.state)
     ? location.state
     : null;
-  if (!article) return;
+  if (!article) return <></>;
   const { id, title, body, thumbnail, date, tags } = article;
 
   const handleArticleDelete = async (): Promise<void> => {
