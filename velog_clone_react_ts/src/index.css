@@ -1,0 +1,30 @@
+@import "reset-css";
+
+#root,
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+textarea {
+  border: 0;
+  outline: 0;
+  resize: none;
+}
+
+button {
+  outline: 0;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
